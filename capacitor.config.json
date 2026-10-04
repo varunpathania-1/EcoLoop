@@ -1,8 +1,5 @@
 {
   "appId": "com.ecoloop.app",
   "appName": "EcoLoop",
-  "webDir": "public",
-  "server": {
-    "cleartext": true
-  }
+  "webDir": "public"
 }
