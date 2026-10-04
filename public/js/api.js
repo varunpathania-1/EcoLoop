@@ -1,9 +1,4 @@
-const API_BASE =
-  window.Capacitor?.isNativePlatform?.()
-    ? 'http://10.0.2.2:3000'
-    : (location.hostname === 'localhost' && location.port === '3000'
-        ? ''
-        : 'http://10.0.2.2:3000');
+const API_BASE = 'https://ecoloop-wayl.onrender.com';
 
 const API = {
   async request(path, options = {}) {
