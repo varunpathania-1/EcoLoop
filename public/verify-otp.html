@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify your account · EcoLoop</title>
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/loader.css">
+  <script>document.documentElement.classList.add('eco-boot');</script>
+</head>
+<body class="register-page">
+  <nav class="nav register-nav">
+    <div class="register-nav-inner">
+      <a class="logo ecoloop-brand" href="/"><span class="ecoloop-brand-mark" aria-hidden="true">♻</span>EcoLoop</a>
+      <a class="register-login-link" href="/login.html">Login <span aria-hidden="true">→</span></a>
+    </div>
+  </nav>
+
+  <main class="register-main">
+    <div class="register-layout">
+      <section class="register-intro">
+        <div class="register-kicker"><span>♻</span> ALMOST THERE</div>
+        <h1>Verify your <em>account.</em></h1>
+        <p class="register-lead">We sent a verification code to your email.</p>
+        <div class="register-benefits">
+          <div><span aria-hidden="true">✓</span><strong id="masked-email-hint">Check your email</strong></div>
+          <div><span aria-hidden="true">⏱</span><strong id="otp-countdown">Code expires in 10:00</strong></div>
+        </div>
+      </section>
+
+      <section class="register-card">
+        <div class="register-card-header">
+          <p class="register-eyebrow">Resident verification</p>
+          <h2>Verify your account</h2>
+          <p>We sent a verification code to your email.</p>
+          <p class="register-existing"><span id="masked-email"></span></p>
+        </div>
+        <div id="alert" class="hidden"></div>
+        <form id="verify-form" class="register-form" novalidate>
+          <label class="register-field"><span>Email OTP</span><input id="email-otp" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="6-digit code" required><small class="field-error" id="email-otp-error"></small></label>
+          <button class="register-submit" type="submit"><span>Verify Account</span><span aria-hidden="true">→</span></button>
+          <p class="register-existing">Didn't receive the code? <a href="#" id="resend-otp">Resend OTP</a></p>
+          <p class="register-existing"><a href="/register.html">Back to registration</a></p>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/loader.js"></script>
+  <script src="/js/verify-otp.js"></script>
+</body>
+</html>

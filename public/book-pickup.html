@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Pickup · EcoLoop</title>
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/css/loader.css">
+  <script>document.documentElement.classList.add('eco-boot');</script>
+  <script src="/vendor/leaflet/leaflet.js"></script>
+  <script src="/js/pickup-map.js"></script>
+</head>
+<body class="booking-page">
+  <nav class="nav home-nav" aria-label="Primary">
+    <div class="home-nav-inner">
+      <a class="logo home-logo" href="/"><span class="home-logo-mark" aria-hidden="true">♻</span>EcoLoop</a>
+      <div class="home-center-links" aria-label="Sections" hidden></div>
+      <div class="home-quick-links" id="home-quick-links" aria-label="Quick actions" hidden></div>
+      <div class="home-actions-nav">
+        <div class="home-profile hidden" id="home-profile">
+          <button class="home-profile-button" type="button" id="home-profile-button" aria-haspopup="menu" aria-expanded="false" aria-label="Account menu">
+            <span class="home-profile-avatar" id="home-profile-avatar" aria-hidden="true">•</span>
+            <span class="home-profile-name" id="home-profile-name"></span>
+            <span class="home-profile-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="home-profile-menu" id="home-profile-menu" role="menu" hidden>
+            <div class="home-profile-meta"><strong id="home-profile-fullname"></strong><span id="home-profile-role"></span></div>
+            <div id="home-profile-links"></div>
+            <button class="home-profile-item home-profile-logout" type="button" data-logout><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span><span>Logout</span></button>
+          </div>
+        </div>
+      </div>
+      <button class="home-menu-button" type="button" id="home-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="home-mobile-menu">
+        <span class="home-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <div class="home-mobile-menu" id="home-mobile-menu">
+      <div class="home-mobile-profile hidden" id="home-mobile-profile"></div>
+    </div>
+  </nav>
+  <div class="dashboard-shell">
+
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div>
+          <p class="eyebrow">Book a pickup</p>
+          <h1>Schedule a pickup</h1>
+          <p class="dashboard-subtitle">Choose what you&rsquo;re recycling and tell us when and where to collect it.</p>
+        </div>
+      </header>
+      <div id="alert" class="hidden"></div>
+      <div class="booking-app-grid">
+        <section class="card booking-card">
+          <div class="booking-card-header">
+            <div><p class="eyebrow">New pickup</p><h2>Schedule a collection</h2></div>
+            <span class="booking-secure"><span aria-hidden="true">●</span> Secure</span>
+          </div>
+          <form id="pickup-form" class="form booking-form">
+            <fieldset class="booking-fieldset">
+              <legend>What are you recycling?</legend>
+              <p class="field-hint">Select all categories that apply</p>
+              <div class="categories booking-categories">
+                <label class="category-option"><input type="checkbox" name="category" value="paper" data-rate="8"><span class="category-check" aria-hidden="true">✓</span><span class="category-copy"><strong>Paper</strong><small>₹8 / kg</small></span></label>
+                <label class="category-option"><input type="checkbox" name="category" value="cardboard" data-rate="7"><span class="category-check" aria-hidden="true">✓</span><span class="category-copy"><strong>Cardboard</strong><small>₹7 / kg</small></span></label>
+                <label class="category-option"><input type="checkbox" name="category" value="plastic" data-rate="12"><span class="category-check" aria-hidden="true">✓</span><span class="category-copy"><strong>Plastic</strong><small>₹12 / kg</small></span></label>
+                <label class="category-option"><input type="checkbox" name="category" value="metal" data-rate="25"><span class="category-check" aria-hidden="true">✓</span><span class="category-copy"><strong>Metal</strong><small>₹25 / kg</small></span></label>
+                <label class="category-option"><input type="checkbox" name="category" value="e-waste" data-rate="15"><span class="category-check" aria-hidden="true">✓</span><span class="category-copy"><strong>E-waste</strong><small>₹15 / kg</small></span></label>
+                <label class="category-option"><input type="checkbox" name="category" value="other" data-rate="5"><span class="category-check" aria-hidden="true">✓</span><span class="category-copy"><strong>Other</strong><small>₹5 / kg</small></span></label>
+              </div>
+            </fieldset>
+
+            <div class="booking-field-row">
+              <label class="booking-field"><span>Date</span><input type="date" id="date" required></label>
+              <label class="booking-field"><span>Preferred time</span><input type="time" id="time" required></label>
+            </div>
+            <div class="booking-field">
+              <span class="booking-field-label">Pickup location</span>
+              <p class="field-hint">Select your pickup point on the map or use your current location.</p>
+              <div class="location-buttons">
+                <button class="btn location-primary" type="button" id="use-location">Use my current location</button>
+                <button class="btn secondary location-secondary" type="button" id="pick-on-map">Pick on map</button>
+              </div>
+              <div class="pickup-map" id="pickup-map" role="application" aria-label="Pickup location map. Activate to choose your pickup point."></div>
+              <div class="selected-location-box" id="selected-location-box">
+                <span class="selected-location-pin" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <div>
+                  <p class="selected-location-address" id="selected-location-address">No pickup location selected</p>
+                  <p class="selected-location-hint" id="selected-location-hint">Use your current location or pick a point on the map.</p>
+                  <p class="selected-location-confirm" id="location-status" role="status" hidden>✓ Pickup location selected</p>
+                </div>
+              </div>
+            </div>
+            <fieldset class="booking-fieldset pickup-details">
+              <legend>Pickup details</legend>
+              <div class="booking-field-row">
+                <label class="booking-field"><span>Flat / House / Room No.</span><input id="detail-unit" placeholder="e.g. 204" autocomplete="address-line2" required></label>
+                <label class="booking-field"><span>Building / Apartment Name</span><input id="detail-building" placeholder="e.g. Green Valley Apartments" autocomplete="address-line1"></label>
+              </div>
+              <div class="booking-field-row">
+                <label class="booking-field"><span>Floor</span><input id="detail-floor" placeholder="e.g. 2nd Floor"></label>
+                <label class="booking-field"><span>Landmark</span><input id="detail-landmark" placeholder="e.g. Near main gate"></label>
+              </div>
+            </fieldset>
+            <div class="booking-field">
+              <span class="booking-field-label">Special Instructions <small>(optional)</small></span>
+              <textarea id="detail-instructions" rows="2" placeholder="Call me when you arrive or add any helpful instructions."></textarea>
+            </div>
+            <button class="btn booking-submit" type="submit"><span>Schedule Pickup →</span></button>
+            <div class="booking-next-steps">
+              <p>What happens next?</p>
+              <span><b>1</b> We’ll confirm your pickup</span>
+              <span><b>2</b> Our collector weighs your recyclables</span>
+              <span><b>3</b> Your payment and Eco Points are updated</span>
+            </div>
+            <p class="booking-footnote"><span aria-hidden="true">⌁</span> You’ll receive a confirmation once your pickup is scheduled.</p>
+          </form>
+        </section>
+        <aside class="card pickup-summary-card" aria-labelledby="pickup-summary-title">
+          <section class="pickup-summary pickup-summary-plain">
+            <div class="pickup-summary-header">
+              <div><p class="eyebrow">Live overview</p><h3 id="pickup-summary-title">Your Pickup</h3></div>
+              <span class="selected-count"><strong id="selected-category-count">0</strong> selected</span>
+            </div>
+            <div id="selected-category-empty" class="summary-empty">Select a material above to add it to your pickup.</div>
+            <ul id="selected-category-list" class="selected-category-list"></ul>
+            <div class="summary-location" id="pickup-datetime-line"></div>
+            <div class="summary-location" id="pickup-location-line">No pickup location selected yet.</div>
+            <div class="summary-location" id="pickup-details-line">No pickup details entered yet.</div>
+            <div class="summary-details">
+              <span>Eco Points</span><strong>10 points / kg</strong>
+            </div>
+            <p class="summary-note">Final earnings are calculated after our collector weighs your recyclables.</p>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/loader.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/booking.js"></script>
+  <script>
+    if (typeof initNavbar === 'function') initNavbar();
+  </script>
+</body>
+</html>

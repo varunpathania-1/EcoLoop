@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoLoop</title>
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/loader.css?v=3">
+  <script>document.documentElement.classList.add('eco-boot');</script>
+</head>
+<body class="home-page">
+  <nav class="nav home-nav" aria-label="Primary">
+    <div class="home-nav-inner">
+      <a class="logo home-logo" href="/"><span class="home-logo-mark" aria-hidden="true">♻</span>EcoLoop</a>
+      <div class="home-center-links" aria-label="Sections">
+        <a class="home-center-link active" href="#home">Home</a>
+        <a class="home-center-link" href="#how-it-works">How It Works</a>
+        <a class="home-center-link" href="#categories">Categories</a>
+        <a class="home-center-link" href="#about">About</a>
+        <a class="home-center-link" href="#contact">Contact</a>
+      </div>
+      <div class="home-quick-links" id="home-quick-links" aria-label="Quick actions" hidden></div>
+      <div class="home-actions-nav">
+        <a class="home-login-button" href="/login.html">Login</a>
+        <a class="home-cta-button" href="/register.html">Sign Up <span aria-hidden="true">→</span></a>
+        <div class="home-profile hidden" id="home-profile">
+          <button class="home-profile-button" type="button" id="home-profile-button" aria-haspopup="menu" aria-expanded="false" aria-label="Account menu">
+            <span class="home-profile-avatar" id="home-profile-avatar" aria-hidden="true">•</span>
+            <span class="home-profile-name" id="home-profile-name"></span>
+            <span class="home-profile-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="home-profile-menu" id="home-profile-menu" role="menu" hidden>
+            <div class="home-profile-meta"><strong id="home-profile-fullname"></strong><span id="home-profile-role"></span></div>
+            <div id="home-profile-links"></div>
+            <button class="home-profile-item home-profile-logout" type="button" data-logout><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span><span>Logout</span></button>
+          </div>
+        </div>
+      </div>
+      <button class="home-menu-button" type="button" id="home-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="home-mobile-menu">
+        <span class="home-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <div class="home-mobile-menu" id="home-mobile-menu">
+      <div class="home-mobile-profile hidden" id="home-mobile-profile"></div>
+      <a class="home-mobile-link" href="#home">Home</a>
+      <a class="home-mobile-link" href="#how-it-works">How It Works</a>
+      <a class="home-mobile-link" href="#categories">Categories</a>
+      <a class="home-mobile-link" href="#about">About</a>
+      <a class="home-mobile-link" href="#contact">Contact</a>
+      <a class="home-mobile-link home-mobile-login" href="/login.html">Login</a>
+      <a class="home-mobile-link home-mobile-cta" href="/register.html">Sign Up <span aria-hidden="true">→</span></a>
+    </div>
+  </nav>
+
+  <main id="home-public" class="landing">
+    <section class="landing-hero" id="home">
+      <div class="landing-hero-copy">
+        <p class="landing-eyebrow">Smart waste collection</p>
+        <h1>Turn your recyclable waste into a <em>cleaner tomorrow.</em></h1>
+        <p class="landing-lead">Schedule convenient doorstep recycling pickups and help build a more sustainable community.</p>
+        <div class="landing-hero-actions">
+          <a class="landing-btn landing-btn-primary" href="/book-pickup.html">Book a Pickup <span aria-hidden="true">→</span></a>
+          <a class="landing-btn landing-btn-secondary" href="#how-it-works"><span aria-hidden="true">▷</span> How It Works</a>
+        </div>
+      </div>
+      <div class="landing-hero-art" aria-hidden="true">
+        <svg viewBox="0 0 560 420" role="img" aria-label="EcoLoop recycling truck illustration">
+          <rect width="560" height="420" fill="none"/>
+          <circle cx="470" cy="70" r="150" fill="#EAF7EF"/>
+          <circle cx="120" cy="380" r="90" fill="#EAF7EF"/>
+          <g>
+            <rect x="180" y="150" width="180" height="140" rx="10" fill="#ffffff" stroke="#E2E8E4" stroke-width="2"/>
+            <path d="M360 210h50l40 50v30h-90z" fill="#087443"/>
+            <rect x="185" y="165" width="60" height="26" rx="6" fill="#087443"/>
+            <text x="215" y="183" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">EcoLoop</text>
+            <path d="M270 210l14 24 14-24zM270 246l14-24 14 24z" fill="none" stroke="#087443" stroke-width="4"/>
+            <rect x="180" y="60" width="380" height="0" fill="none"/>
+            <circle cx="230" cy="300" r="22" fill="#17211B"/><circle cx="230" cy="300" r="9" fill="#68756E"/>
+            <circle cx="400" cy="300" r="22" fill="#17211B"/><circle cx="400" cy="300" r="9" fill="#68756E"/>
+          </g>
+          <g>
+            <rect x="80" y="250" width="70" height="70" rx="10" fill="#087443"/>
+            <path d="M110 268l7 12h-14zM102 282h16" fill="none" stroke="#fff" stroke-width="3"/>
+            <rect x="60" y="235" width="30" height="18" rx="6" fill="#075B35"/>
+          </g>
+          <g fill="#087443" opacity="0.9">
+            <circle cx="90" cy="140" r="6"/><rect x="80" y="150" width="6" height="18" rx="3"/>
+            <circle cx="500" cy="180" r="6"/><rect x="494" y="190" width="6" height="18" rx="3"/>
+          </g>
+          <g stroke="#087443" stroke-width="3" fill="none">
+            <path d="M450 300c10-30 30-50 60-50"/><path d="M110 90c-8-20 4-40 30-46" />
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="landing-trust" aria-label="Benefits">
+      <div class="landing-trust-item"><span class="landing-ico">✓</span><div><strong>Convenient</strong><p>Schedule in minutes</p></div></div>
+      <div class="landing-trust-item"><span class="landing-ico">🛡</span><div><strong>Trusted</strong><p>Verified collectors</p></div></div>
+      <div class="landing-trust-item"><span class="landing-ico">◎</span><div><strong>Transparent</strong><p>Track your pickups</p></div></div>
+      <div class="landing-trust-item"><span class="landing-ico">♻</span><div><strong>Sustainable</strong><p>A cleaner tomorrow</p></div></div>
+    </section>
+
+    <section class="landing-section landing-how" id="how-it-works">
+      <p class="landing-eyebrow">How EcoLoop works</p>
+      <h2>A simple process for a cleaner planet</h2>
+      <p class="landing-sub">From scheduling to recycling, EcoLoop makes it easy to do your part for the environment.</p>
+      <div class="landing-steps">
+        <article class="landing-step"><span class="landing-num">01</span><h3>Choose Waste</h3><p>Select the type of recyclable items you want to dispose.</p></article>
+        <article class="landing-step"><span class="landing-num">02</span><h3>Schedule Pickup</h3><p>Pick a date and time that works for you.</p></article>
+        <article class="landing-step"><span class="landing-num">03</span><h3>Collector Arrives</h3><p>Our verified collector picks up from your doorstep.</p></article>
+        <article class="landing-step"><span class="landing-num">04</span><h3>Gets Recycled</h3><p>Your waste is sent for recycling and reuse.</p></article>
+      </div>
+    </section>
+
+    <section class="landing-section" id="categories">
+      <p class="landing-eyebrow">Waste categories</p>
+      <h2>What can you recycle?</h2>
+      <p class="landing-sub">We collect a wide range of recyclable materials.</p>
+      <div class="landing-cats">
+        <article><span class="landing-cat-ico">🧴</span><h3>Plastic</h3><p>Bottles, containers, packaging</p></article>
+        <article><span class="landing-cat-ico">📄</span><h3>Paper</h3><p>Newspapers, books, office paper</p></article>
+        <article><span class="landing-cat-ico">🥫</span><h3>Metal</h3><p>Cans, foil, metal items</p></article>
+        <article><span class="landing-cat-ico">🍾</span><h3>Glass</h3><p>Bottles, jars, glass items</p></article>
+        <article><span class="landing-cat-ico">🖥</span><h3>E-Waste</h3><p>Electronics, small appliances</p></article>
+        <article><span class="landing-cat-ico">📦</span><h3>Cardboard</h3><p>Boxes, cartons, packaging</p></article>
+      </div>
+    </section>
+
+    <section class="landing-section landing-why" id="about">
+      <div class="landing-why-copy">
+        <p class="landing-eyebrow">Why choose EcoLoop</p>
+        <h2>Small actions.<br>Big impact.</h2>
+        <p class="landing-sub">We make recycling easy, reliable, and meaningful for a cleaner, greener community.</p>
+        <div class="landing-why-grid">
+          <div><span class="landing-ico">📅</span><strong>Convenient</strong><p>Schedule pickups in minutes from your home.</p></div>
+          <div><span class="landing-ico">🛡</span><strong>Reliable</strong><p>Verified and trained collectors.</p></div>
+          <div><span class="landing-ico">👁</span><strong>Transparent</strong><p>Track your pickup status in real time.</p></div>
+          <div><span class="landing-ico">♻</span><strong>Sustainable</strong><p>Help reduce landfill waste and support a cleaner planet.</p></div>
+        </div>
+      </div>
+      <div class="landing-why-art" aria-hidden="true">
+        <svg viewBox="0 0 320 260">
+          <circle cx="160" cy="130" r="90" fill="#EAF7EF"/>
+          <circle cx="160" cy="130" r="55" fill="#087443" opacity="0.15"/>
+          <path d="M160 60v40M120 90c10 10 25 15 40 15s30-5 40-15" stroke="#087443" stroke-width="4" fill="none"/>
+          <path d="M100 170c30-20 90-20 120 0" stroke="#075B35" stroke-width="4" fill="none"/>
+          <rect x="90" y="195" width="140" height="34" rx="17" fill="#fff" stroke="#E2E8E4"/>
+          <text x="160" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#075B35">Together for a Greener Tomorrow</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="landing-stats" aria-label="Impact">
+      <div><strong>Doorstep</strong><span>Easy pickup booking</span></div>
+      <div><strong>Verified</strong><span>Trusted collectors</span></div>
+      <div><strong>Transparent</strong><span>Live pickup tracking</span></div>
+      <div><strong>Sustainable</strong><span>Responsible recycling</span></div>
+    </section>
+
+    <section class="landing-section" id="contact">
+      <p class="landing-eyebrow">Why communities choose EcoLoop</p>
+      <h2>Built for cleaner neighborhoods</h2>
+      <div class="landing-cats">
+        <article><h3>For households</h3><p>Book a pickup in minutes and track every step of your recyclables.</p></article>
+        <article><h3>For collectors</h3><p>Clear assignments, optimized routes, and simple status updates.</p></article>
+        <article><h3>For operators</h3><p>Monitor pickups, payments, and collector activity from one dashboard.</p></article>
+      </div>
+    </section>
+
+    <section class="landing-cta">
+      <div>
+        <h2>Ready to recycle smarter?</h2>
+        <p>Join EcoLoop today and be part of a cleaner, greener tomorrow.</p>
+        <div class="landing-hero-actions">
+          <a class="landing-btn landing-btn-primary" href="/book-pickup.html">Book a Pickup</a>
+          <a class="landing-btn landing-btn-secondary" href="/register.html">Create Account</a>
+        </div>
+      </div>
+      <span class="landing-cta-mark" aria-hidden="true">♻</span>
+    </section>
+  </main>
+  <section id="home-auth" class="home-auth" aria-live="polite" hidden>
+    <div class="home-auth-inner">
+      <div data-home-view="resident" hidden>
+        <h2 class="dash-greet">Welcome back, <span id="ha-name">friend</span> <span aria-hidden="true">👋</span></h2>
+        <p class="dash-sub">Here&rsquo;s your EcoLoop activity overview.</p>
+        <div class="dash-stats">
+          <div class="dash-stat"><span class="dash-stat-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 9.5h18"/></svg></span><div><span>Total Pickups</span><strong id="ha-pickups">–</strong></div></div>
+          <div class="dash-stat"><span class="dash-stat-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5 0-8-3.5-8-9 0-4 2.5-7 4.5-8.5C10 2 11 2 12 2c5 0 8 3.5 8 9 0 5.5-3 10-8 10Z"/><path d="M12 21c0-6 2-10 6-13"/></svg></span><div><span>Total Waste</span><strong id="ha-kg">–</strong></div></div>
+          <div class="dash-stat"><span class="dash-stat-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 8h12M6 13l8.5 8M6 13h3M9 13c6.667 0 6.667-10 0-10"/></svg></span><div><span>Total Earnings</span><strong id="ha-earned">–</strong></div></div>
+          <div class="dash-stat dash-stat-pending"><span class="dash-stat-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 13.5"/></svg></span><div><span>Pending Payment</span><strong id="ha-pending">–</strong></div></div>
+        </div>
+        <div class="dash-grid">
+          <section class="dash-card" aria-labelledby="ha-recent-title">
+            <div class="dash-card-head"><span class="dash-stat-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 9.5h18"/></svg></span><h3 id="ha-recent-title">Recent pickup</h3><span class="dash-status" id="ha-r-status" hidden></span></div>
+            <div id="ha-recent-empty">
+              <p class="muted">No pickups yet</p>
+              <a class="btn home-primary-button home-primary-small" href="/book-pickup.html">Book a Pickup <span aria-hidden="true">→</span></a>
+            </div>
+            <div id="ha-recent-full" hidden>
+              <p class="dash-recent-date" id="ha-r-date"></p>
+              <p class="muted" id="ha-r-cats"></p>
+              <div class="dash-metrics">
+                <div><strong id="ha-r-kg">–</strong><span>Recycled</span></div>
+                <div><strong id="ha-r-amt">–</strong><span>Earned</span></div>
+                <div><strong id="ha-r-pts">–</strong><span>Eco Points</span></div>
+              </div>
+            </div>
+          </section>
+          <section class="dash-card" aria-labelledby="ha-impact-title">
+            <div class="dash-card-head"><span class="dash-leaf" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5 0-8-3.5-8-9 0-4 2.5-7 4.5-8.5C10 2 11 2 12 2c5 0 8 3.5 8 9 0 5.5-3 10-8 10Z"/><path d="M12 21c0-6 2-10 6-13"/></svg></span><h3 id="ha-impact-title">Your recycling impact</h3></div>
+            <p class="dash-impact-big"><strong id="ha-impact-kg">0 kg</strong> recycled</p>
+            <p class="muted" id="ha-impact-sub">Keep your recycling going.</p>
+          </section>
+        </div>
+        <section class="dash-payout" aria-labelledby="ha-payout-title">
+          <span class="dash-payout-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="3"/><path d="M2 10h20"/><circle cx="17.5" cy="14.5" r="1.2" fill="currentColor"/></svg></span>
+          <div class="dash-payout-copy">
+            <p class="home-eyebrow">Payouts <span id="ha-payout-badge" hidden>✓ Configured</span></p>
+            <h3 id="ha-payout-title">Payment details</h3>
+            <div id="ha-payout-empty">
+              <p class="muted">Add your UPI or bank account details to receive your EcoLoop payouts.</p>
+            </div>
+            <div id="ha-payout-full" hidden>
+              <p class="muted" id="ha-payout-method"></p>
+              <p class="muted" id="ha-payout-value"></p>
+            </div>
+            <p class="muted" id="ha-payout-pending" hidden>Payment pending — add your payout details to receive your EcoLoop payment. <a href="/payment-details.html">Add Payment Details</a></p>
+            <a class="btn home-primary-button" href="/payment-details.html"><span id="ha-payout-cta">Add Payment Details</span> <span aria-hidden="true">→</span></a>
+          </div>
+          <svg class="dash-payout-art" viewBox="0 0 200 150" aria-hidden="true"><ellipse cx="70" cy="120" rx="46" ry="26" fill="#DFF2E7"/><ellipse cx="150" cy="60" rx="30" ry="34" fill="#DFF2E7" opacity="0.7"/><rect x="60" y="55" width="80" height="60" rx="12" fill="#087443"/><rect x="60" y="72" width="80" height="12" fill="#075B35" opacity="0.6"/><circle cx="132" cy="104" r="18" fill="#fff" stroke="#0E9A5A" stroke-width="3"/><path d="M132 96v16M124 104h16" stroke="#0E9A5A" stroke-width="3" stroke-linecap="round"/><path d="M150 30c8-12 22-16 34-12-2 12-12 22-26 22" fill="#12B76A"/><path d="M40 40c-8-10-8-22-4-32 10 4 16 14 14 26" fill="#0E9A5A" opacity="0.7"/></svg>
+        </section>
+      </div>
+      <div data-home-view="admin" hidden>
+        <p class="home-kicker"><span></span> Your EcoLoop</p>
+        <h2 class="home-auth-greet">Welcome back, <span id="ha-a-name">friend</span> <span aria-hidden="true">👋</span></h2>
+        <p class="home-auth-sub">Here is what is happening across EcoLoop today.</p>
+        <div class="home-stat-grid">
+          <div class="home-stat"><span>Active Collectors</span><strong id="ha-a-active">–</strong></div>
+          <div class="home-stat"><span>Total Collectors</span><strong id="ha-a-colls">–</strong></div>
+          <div class="home-stat"><span>Total Pickups</span><strong id="ha-a-pickups">–</strong></div>
+          <div class="home-stat"><span>Completed Pickups</span><strong id="ha-a-done">–</strong></div>
+        </div>
+        <div class="home-cta-row">
+          <a class="btn home-primary-button" href="/admin.html">Open Admin Dashboard <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="home-footer">
+    <div class="home-footer-inner">
+      <div class="home-footer-brand">
+        <a class="home-footer-logo" href="/"><span class="home-footer-mark" aria-hidden="true">♻</span>EcoLoop</a>
+        <p>Less waste. More value.</p>
+      </div>
+      <nav class="home-footer-nav" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#categories">Categories</a>
+        <a href="#impact">Impact</a>
+        <a href="#about">About</a>
+      </nav>
+      <p class="home-footer-note">Responsible recycling, one pickup at a time.</p>
+    </div>
+    <div class="home-footer-bottom">
+      <div class="home-footer-bottom-inner">
+        <p>&copy; 2026 EcoLoop. All rights reserved.</p>
+        <p class="home-footer-tagline">A cleaner, greener tomorrow.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/api.js?v=3"></script>
+  <script src="/js/auth.js?v=3"></script>
+  <script src="/js/loader.js?v=3"></script>
+  <script src="/js/navbar.js?v=3"></script>
+  <script src="/js/home-auth.js?v=3"></script>
+  <script>
+    (function () {
+      if (typeof initHomePage === 'function') initHomePage();
+      document.body.classList.add('js');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          document.body.classList.add('home-loaded');
+        });
+      });
+      var links = Array.prototype.slice.call(document.querySelectorAll('.home-center-links .home-center-link, .home-mobile-menu a[href^="#"]'));
+      function setActiveLink(id) {
+        links.forEach(function (link) {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+      function clearActiveLinks() {
+        links.forEach(function (link) { link.classList.remove('active'); });
+      }
+      function syncActive() {
+        var hash = window.location.hash;
+        if (!hash) { clearActiveLinks(); return; }
+        setActiveLink(hash.slice(1));
+      }
+      window.addEventListener('hashchange', syncActive);
+      syncActive();
+      var revealEls = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+      if ('IntersectionObserver' in window && revealEls.length) {
+        revealEls.forEach(function (el) { el.classList.add('reveal'); });
+        var revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              el.classList.add('is-visible');
+              window.setTimeout(function () { el.classList.add('settled'); }, 750);
+              observer.unobserve(el);
+            }
+          });
+        }, { threshold: 0.15 });
+        revealEls.forEach(function (el) { revealObserver.observe(el); });
+      }
+      if ('IntersectionObserver' in window) {
+        var spySections = ['home', 'how-it-works', 'categories', 'about', 'contact']
+          .map(function (id) { return document.getElementById(id); })
+          .filter(Boolean);
+        if (spySections.length) {
+          var visibleSections = {};
+          var spyObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) visibleSections[entry.target.id] = true;
+              else delete visibleSections[entry.target.id];
+            });
+            var ids = Object.keys(visibleSections);
+            if (!ids.length) { clearActiveLinks(); return; }
+            var best = null;
+            var bestDist = Infinity;
+            ids.forEach(function (id) {
+              var el = document.getElementById(id);
+              if (!el) return;
+              var rect = el.getBoundingClientRect();
+              var dist = Math.abs(rect.top + rect.height / 2 - window.innerHeight / 2);
+              if (dist < bestDist) { bestDist = dist; best = id; }
+            });
+            if (best) setActiveLink(best);
+          }, { rootMargin: '-30% 0px -45% 0px', threshold: 0 });
+          spySections.forEach(function (section) { spyObserver.observe(section); });
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

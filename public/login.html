@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login · EcoLoop</title>
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/loader.css">
+  <script>document.documentElement.classList.add('eco-boot');</script>
+</head>
+<body class="login-page">
+  <nav class="nav home-nav" aria-label="Primary">
+    <div class="home-nav-inner">
+      <a class="logo home-logo" href="/"><span class="home-logo-mark" aria-hidden="true">♻</span>EcoLoop</a>
+      <div class="login-nav-actions">
+        <a class="home-cta-button" href="/register.html">Register <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </nav>
+  <main class="login-main">
+    <div class="login-container">
+      <section class="login-brand-panel" aria-hidden="false">
+        <a class="login-brand" href="/"><span class="login-brand-mark" aria-hidden="true">♻</span><span><strong>EcoLoop</strong><small>SMART WASTE COLLECTION</small></span></a>
+        <h1>A Cleaner<br>Tomorrow<br><em>Starts Today.</em></h1>
+        <p class="login-brand-lead">Join EcoLoop and be part of a cleaner, greener, and healthier community.</p>
+        <ul class="benefits">
+          <li class="benefit-item"><div class="benefit-icon" aria-hidden="true">📅</div><div class="benefit-content"><div class="benefit-title">Easy Scheduling</div><div class="benefit-description">Book pickups in minutes</div></div></li>
+          <li class="benefit-item"><div class="benefit-icon" aria-hidden="true">✓</div><div class="benefit-content"><div class="benefit-title">Verified Collectors</div><div class="benefit-description">Trusted and trained professionals</div></div></li>
+          <li class="benefit-item"><div class="benefit-icon" aria-hidden="true">◉</div><div class="benefit-content"><div class="benefit-title">Real-time Tracking</div><div class="benefit-description">Know your pickup status</div></div></li>
+          <li class="benefit-item"><div class="benefit-icon" aria-hidden="true">♻</div><div class="benefit-content"><div class="benefit-title">Positive Impact</div><div class="benefit-description">Help build a sustainable future</div></div></li>
+        </ul>
+        <svg class="login-brand-art" viewBox="0 0 560 230" aria-hidden="true">
+          <circle cx="480" cy="60" r="95" fill="#DFF2E7"/>
+          <path d="M60 190h440" stroke="#CBE7D6" stroke-width="3"/>
+          <g>
+            <rect x="190" y="80" width="170" height="90" rx="12" fill="#ffffff" stroke="#D8E8DC" stroke-width="2.5"/>
+            <path d="M360 120h40l34 38v16h-74z" fill="#087443"/>
+            <rect x="200" y="96" width="56" height="24" rx="6" fill="#087443"/>
+            <text x="228" y="112" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">EcoLoop</text>
+            <path d="M280 118l12 20 12-20M280 146l12-20 12 20" fill="none" stroke="#087443" stroke-width="4"/>
+            <circle cx="235" cy="176" r="15" fill="#17211B"/><circle cx="235" cy="176" r="6" fill="#9DB3A6"/>
+            <circle cx="400" cy="176" r="15" fill="#17211B"/><circle cx="400" cy="176" r="6" fill="#9DB3A6"/>
+          </g>
+          <g>
+            <rect x="98" y="132" width="58" height="58" rx="10" fill="#087443"/>
+            <path d="M127 148l8 14h-16z" fill="none" stroke="#fff" stroke-width="3.5"/>
+            <rect x="88" y="122" width="28" height="16" rx="6" fill="#075B35"/>
+          </g>
+          <g fill="#0E9A5A">
+            <rect x="455" y="130" width="10" height="60" rx="5"/>
+            <circle cx="460" cy="120" r="22"/>
+            <rect x="88" y="60" width="10" height="40" rx="5"/>
+            <circle cx="93" cy="52" r="17"/>
+          </g>
+        </svg>
+      </section>
+
+      <section class="login-form-panel">
+        <div class="login-form-inner">
+          <a class="login-brand login-brand-mobile" href="/"><span class="login-brand-mark" aria-hidden="true">♻</span><span><strong>EcoLoop</strong></span></a>
+          <h2>Welcome Back</h2>
+          <p class="login-subtitle">Login to your EcoLoop account</p>
+          <div id="alert" class="hidden" role="alert"></div>
+          <form id="login-form" class="login-form" novalidate>
+            <label class="login-field"><span>Email address</span><span class="login-input-wrap"><input type="email" id="email" placeholder="Enter your email" autocomplete="email" required></span><small class="login-field-error" id="email-error"></small></label>
+            <label class="login-field login-field-password"><span>Password</span><span class="login-password-wrap"><input type="password" placeholder="Enter your password" id="password" autocomplete="current-password" required><button type="button" class="login-password-toggle" id="password-toggle" aria-label="Show password" title="Show password" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg></button></span><small class="login-caps" id="caps-warning" role="status" hidden>Caps Lock is on</small><small class="login-field-error" id="password-error"></small></label>
+            <div class="login-options"><label class="login-remember"><input type="checkbox" id="remember-me"><span>Remember me</span></label><a href="#" class="login-forgot" id="forgot-password">Forgot password?</a></div>
+            <button class="login-submit" type="submit"><span>Login</span><span aria-hidden="true">→</span></button>
+            <div class="login-divider" aria-hidden="true"><span>or continue with</span></div>
+            <div class="login-social">
+              <button type="button" class="login-social-btn" id="google-login-btn" aria-label="Continue with Google">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 10.2v3.9h5.5a4.7 4.7 0 0 1-2 3.1l3.2 2.5c1.9-1.7 3-4.3 3-7.4 0-.7-.1-1.5-.2-2.1z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.7-2.4l-3.2-2.5c-.9.6-2 .9-3.5.9-2.7 0-5-1.8-5.8-4.2l-3.3 2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.2 13.8A6 6 0 0 1 5.9 12c0-.6.1-1.2.3-1.8L2.9 7.6A10 10 0 0 0 2 12c0 1.6.4 3.1 1 4.4z"/><path fill="#4285F4" d="M12 5.9c1.5 0 2.8.5 3.8 1.5L18.4 4.8A9.9 9.9 0 0 0 12 2a10 10 0 0 0-9.1 5.6l3.3 2.6C7 7.7 9.3 5.9 12 5.9z"/></svg>
+                Continue with Google
+              </button>
+              <button type="button" class="login-social-btn" id="microsoft-login-btn" aria-label="Continue with Microsoft">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="13" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="13" width="10" height="10" fill="#00A4EF"/><rect x="13" y="13" width="10" height="10" fill="#FFB900"/></svg>
+                Continue with Microsoft
+              </button>
+            </div>
+            <p id="social-note" class="login-social-note hidden" role="status"></p>
+            <p class="login-existing">Don't have an account? <a href="/register.html">Sign up</a></p>
+            <p class="login-security">🔒 Your data is secure with us</p>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/loader.js"></script>
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const passwordInput = document.getElementById('password');
+    const passwordToggle = document.getElementById('password-toggle');
+    const rememberCheckbox = document.getElementById('remember-me');
+
+    // The checkbox applies to the current login attempt only: always start
+    // unchecked, never restore a previous state, never persist the flag.
+    // Browser autofill targets credentials, not checkboxes, but reset
+    // defensively on every initialization anyway.
+    rememberCheckbox.checked = false;
+
+    guardPublicPage();
+
+    function setLoginError(id, message) {
+      const input = document.getElementById(id);
+      const error = document.getElementById(`${id}-error`);
+      input.classList.toggle('has-error', Boolean(message));
+      if (Boolean(message)) input.setAttribute('aria-invalid', 'true');
+      else input.removeAttribute('aria-invalid');
+      error.textContent = message || '';
+    }
+
+    function friendlyLoginError(error) {
+      const message = String(error.message || '').toLowerCase();
+      if (message.includes('invalid email') || message.includes('invalid email or password')) return 'Email or password is incorrect.';
+      if (message.includes('deactivated') || message.includes('suspended')) return 'Your account has been deactivated. Please contact an administrator.';
+      return "We couldn't sign you in right now. Please try again.";
+    }
+
+    const EYE_HIDDEN_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>';
+    const EYE_VISIBLE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
+
+    function setPasswordVisible(visible) {
+      passwordInput.type = visible ? 'text' : 'password';
+      passwordToggle.innerHTML = visible ? EYE_VISIBLE_SVG : EYE_HIDDEN_SVG;
+      passwordToggle.setAttribute('aria-label', visible ? 'Hide password' : 'Show password');
+      passwordToggle.setAttribute('title', visible ? 'Hide password' : 'Show password');
+      passwordToggle.setAttribute('aria-pressed', String(visible));
+    }
+
+    // Default state: hidden
+    setPasswordVisible(false);
+
+    passwordToggle.addEventListener('click', () => {
+      setPasswordVisible(passwordInput.type !== 'text');
+    });
+
+    const capsWarning = document.getElementById('caps-warning');
+
+    function updateCapsWarning(event) {
+      const on = Boolean(event && event.getModifierState && event.getModifierState('CapsLock'));
+      capsWarning.hidden = !on;
+    }
+
+    passwordInput.addEventListener('keydown', updateCapsWarning);
+    passwordInput.addEventListener('keyup', updateCapsWarning);
+    passwordInput.addEventListener('blur', () => { capsWarning.hidden = true; });
+
+    loginForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      setLoginError('email', '');
+      setLoginError('password', '');
+      capsWarning.hidden = true;
+      document.getElementById('alert').classList.add('hidden');
+      const email = document.getElementById('email').value.trim();
+      const password = passwordInput.value;
+      let valid = true;
+      if (!email) { setLoginError('email', 'Please enter your email address.'); valid = false; }
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setLoginError('email', 'Please enter a valid email address.'); valid = false; }
+      if (!password) { setLoginError('password', 'Please enter your password.'); valid = false; }
+      if (!valid) return;
+      const button = loginForm.querySelector('button[type="submit"]');
+      button.disabled = true;
+      button.innerHTML = '<span class="login-spinner" aria-hidden="true"></span><span>Signing in...</span>';
+      try {
+        const rememberMe = rememberCheckbox.checked;
+        const data = await API.login({
+          email,
+          password,
+          rememberMe
+        });
+        saveSession(data.token, data.user, data.remember === true);
+        button.innerHTML = '<span>Welcome back ✓</span>';
+        window.setTimeout(() => redirectByRole(data.user), 450);
+      } catch (err) {
+        showAlert(document.getElementById('alert'), friendlyLoginError(err));
+        button.disabled = false;
+        button.innerHTML = '<span>Sign in</span><span aria-hidden="true">→</span>';
+      }
+    });
+
+    // Password reset is not implemented on the backend yet. Be honest
+    // instead of linking to a dead page.
+    document.getElementById('forgot-password').addEventListener('click', (event) => {
+      event.preventDefault();
+      showAlert(document.getElementById('alert'), 'Password reset is not available yet. Please contact support if you cannot sign in.');
+    });
+
+    // OAuth is not yet configured on the backend. Show an honest status
+    // instead of pretending a sign-in succeeded.
+    const socialNote = document.getElementById('social-note');    ['google-login-btn', 'microsoft-login-btn'].forEach((id) => {
+      const btn = document.getElementById(id);
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        const provider = id.startsWith('google') ? 'Google' : 'Microsoft';
+        const original = btn.innerHTML;
+        btn.disabled = true;
+        btn.textContent = `Connecting to ${provider}...`;
+        socialNote.textContent = `${provider} sign-in is not configured yet. Please use your email and password.`;
+        socialNote.classList.remove('hidden');
+        setTimeout(() => { btn.disabled = false; btn.innerHTML = original; }, 1500);
+      });
+    });
+  </script>
+</body>
+</html>

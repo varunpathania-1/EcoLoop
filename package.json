@@ -1,0 +1,35 @@
+{
+  "name": "ecoloop",
+  "version": "1.0.0",
+  "description": "EcoLoop MVP digital recycling platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node scripts/seed-collector.js",
+    "test:e2e": "node scripts/e2e.js",
+    "test:filters": "node scripts/test-history-filters.js"
+  },
+  "keywords": [
+    "recycling",
+    "ecoloop"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.10.1",
+    "nodemailer": "^10.0.10"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^11.2.0",
+    "nodemon": "^3.1.14"
+  }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register · EcoLoop</title>
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/loader.css">
+  <script>document.documentElement.classList.add('eco-boot');</script>
+</head>
+<body class="register-page register-signup-page">
+  <nav class="register-nav">
+    <div class="register-nav-inner">
+      <a class="ecoloop-brand" href="/"><span class="ecoloop-brand-mark" aria-hidden="true">♻</span>EcoLoop</a>
+      <a class="register-login-btn" href="/login.html">Login <span aria-hidden="true">→</span></a>
+    </div>
+  </nav>
+
+  <main class="register-main">
+    <div class="register-card">
+      <section class="register-intro">
+        <p class="register-eyebrow">● Join EcoLoop</p>
+        <h1>Start your<br><em>recycling journey.</em></h1>
+        <p class="register-lead">Create your free account and turn your recyclable waste into value.</p>
+        <ul class="benefits">
+          <li class="benefit-item"><div class="benefit-icon" aria-hidden="true">✓</div><div class="benefit-content"><div class="benefit-title">Every pickup counts.</div><div class="benefit-description">From household waste to measurable impact.</div></div></li>
+          <li class="benefit-item"><div class="benefit-icon" aria-hidden="true">✓</div><div class="benefit-content"><div class="benefit-title">Easy doorstep pickup.</div><div class="benefit-description">Schedule recycling collection when convenient.</div></div></li>
+          <li class="benefit-item"><div class="benefit-icon" aria-hidden="true">✓</div><div class="benefit-content"><div class="benefit-title">Trusted collectors.</div><div class="benefit-description">Reliable and trained professionals.</div></div></li>
+          <li class="benefit-item"><div class="benefit-icon" aria-hidden="true">✓</div><div class="benefit-content"><div class="benefit-title">Track your impact.</div><div class="benefit-description">Follow your pickups from request to completion.</div></div></li>
+        </ul>
+        <svg class="register-art" viewBox="0 0 560 200" aria-hidden="true">
+          <circle cx="470" cy="60" r="90" fill="#DFF2E7"/>
+          <path d="M40 180h480" stroke="#CBE7D6" stroke-width="3"/>
+          <g>
+            <rect x="170" y="62" width="160" height="88" rx="12" fill="#ffffff" stroke="#D8E8DC" stroke-width="2.5"/>
+            <path d="M330 108h38l32 36v14h-70z" fill="#087443"/>
+            <rect x="180" y="76" width="54" height="22" rx="6" fill="#087443"/>
+            <text x="207" y="91" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">EcoLoop</text>
+            <path d="M260 108l11 18 11-18M260 132l11-18 11 18" fill="none" stroke="#087443" stroke-width="4"/>
+            <circle cx="215" cy="156" r="14" fill="#17211B"/><circle cx="215" cy="156" r="6" fill="#9DB3A6"/>
+            <circle cx="372" cy="156" r="14" fill="#17211B"/><circle cx="372" cy="156" r="6" fill="#9DB3A6"/>
+          </g>
+          <g>
+            <rect x="88" y="112" width="52" height="54" rx="9" fill="#087443"/>
+            <path d="M114 128l7 12h-14z" fill="none" stroke="#fff" stroke-width="3"/>
+            <rect x="80" y="102" width="26" height="15" rx="6" fill="#075B35"/>
+          </g>
+          <g fill="#0E9A5A">
+            <rect x="452" y="110" width="10" height="58" rx="5"/>
+            <circle cx="457" cy="102" r="20"/>
+            <rect x="94" y="42" width="9" height="34" rx="5"/>
+            <circle cx="98" cy="34" r="15"/>
+          </g>
+        </svg>
+      </section>
+
+      <section class="register-form-panel">
+        <p class="register-eyebrow">● Resident Account</p>
+        <h2>Create your account</h2>
+        <p class="register-subtitle">Join EcoLoop and start recycling today.</p>
+        <div id="alert" class="hidden" role="alert"></div>
+        <form id="register-form" class="register-form" novalidate>
+          <div class="register-row">
+            <label class="register-field"><span>Full name</span><input id="name" placeholder="Enter your full name" autocomplete="name" required><small class="field-error" id="name-error"></small></label>
+            <label class="register-field"><span>Phone number</span><input type="tel" id="phone" placeholder="Enter your phone number" autocomplete="tel" required><small class="field-error" id="phone-error"></small></label>
+          </div>
+          <label class="register-field"><span>Email address</span><input type="email" id="email" placeholder="Enter your email address" autocomplete="email" required><small class="field-error" id="email-error"></small></label>
+          <label class="register-field"><span>Password</span><span class="password-wrap"><input type="password" id="password" placeholder="Create a password" autocomplete="new-password" minlength="6" required><button type="button" class="password-toggle" id="password-toggle" aria-label="Show password" title="Show password" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg></button></span><small class="register-hint" id="password-hint">Use at least 6 characters.</small><small class="register-caps" id="caps-warning" role="status" hidden>Caps Lock is on</small><small class="field-error" id="password-error"></small></label>
+          <button class="register-submit" type="submit"><span>Create Account</span><span aria-hidden="true">→</span></button>
+          <p class="register-terms">By creating an account, you agree to use EcoLoop responsibly.</p>
+          <p class="register-existing">Already have an account? <a href="/login.html">Login</a></p>
+          <p class="register-security">🔒 Your data is secure with us</p>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/loader.js"></script>
+  <script>
+    guardPublicPage();
+    const registerForm = document.getElementById('register-form');
+    const passwordInput = document.getElementById('password');
+    const passwordToggle = document.getElementById('password-toggle');
+    const fields = ['name', 'email', 'password', 'phone'];
+
+    function setFieldError(id, message) {
+      const input = document.getElementById(id);
+      const error = document.getElementById(`${id}-error`);
+      input.classList.toggle('has-error', Boolean(message));
+      if (Boolean(message)) input.setAttribute('aria-invalid', 'true');
+      else input.removeAttribute('aria-invalid');
+      error.textContent = message || '';
+    }
+
+    function validateForm() {
+      const values = Object.fromEntries(fields.map((id) => [id, document.getElementById(id).value.trim()]));
+      fields.forEach((id) => setFieldError(id, ''));
+      let valid = true;
+      if (!values.name) { setFieldError('name', 'Please enter your full name.'); valid = false; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) { setFieldError('email', 'Please enter a valid email address.'); valid = false; }
+      if (values.password.length < 6) { setFieldError('password', 'Password must be at least 6 characters.'); valid = false; }
+      if (!/^[+\d][\d\s().-]{6,}$/.test(values.phone)) { setFieldError('phone', 'Please enter a valid phone number.'); valid = false; }
+      return { valid, values };
+    }
+
+    const EYE_HIDDEN_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>';
+    const EYE_VISIBLE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
+
+    function setPasswordVisible(visible) {
+      passwordInput.type = visible ? 'text' : 'password';
+      passwordToggle.innerHTML = visible ? EYE_VISIBLE_SVG : EYE_HIDDEN_SVG;
+      passwordToggle.setAttribute('aria-label', visible ? 'Hide password' : 'Show password');
+      passwordToggle.setAttribute('title', visible ? 'Hide password' : 'Show password');
+      passwordToggle.setAttribute('aria-pressed', String(visible));
+    }
+
+    // Default state: hidden
+    setPasswordVisible(false);
+
+    passwordToggle.addEventListener('click', () => {
+      setPasswordVisible(passwordInput.type !== 'text');
+    });
+
+    const capsWarning = document.getElementById('caps-warning');
+
+    function updateCapsWarning(event) {
+      const on = Boolean(event && event.getModifierState && event.getModifierState('CapsLock'));
+      capsWarning.hidden = !on;
+    }
+
+    passwordInput.addEventListener('keydown', updateCapsWarning);
+    passwordInput.addEventListener('keyup', updateCapsWarning);
+    passwordInput.addEventListener('blur', () => { capsWarning.hidden = true; });
+
+    registerForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      capsWarning.hidden = true;
+      const result = validateForm();
+      if (!result.valid) return;
+      const button = registerForm.querySelector('button[type="submit"]');
+      button.disabled = true;
+      button.innerHTML = '<span class="login-spinner" aria-hidden="true"></span><span>Creating account...</span>';
+      showAlert(document.getElementById('alert'), 'Sending verification code...', 'success');
+      try {
+        const data = await API.register({
+          name: result.values.name,
+          email: result.values.email,
+          password: result.values.password,
+          phone: result.values.phone
+        });
+        sessionStorage.setItem('ecoloop_pending_email', data.email || result.values.email);
+        if (data.expiresAt) sessionStorage.setItem('ecoloop_otp_expires_at', data.expiresAt);
+        if (data.maskedEmail) sessionStorage.setItem('ecoloop_masked_email', data.maskedEmail);
+        window.location.href = '/verify-otp.html';
+      } catch (err) {
+        showAlert(document.getElementById('alert'), err.message);
+        button.disabled = false;
+        button.innerHTML = '<span>Create Account</span><span aria-hidden="true">→</span>';
+      }
+    });
+  </script>
+</body>
+</html>

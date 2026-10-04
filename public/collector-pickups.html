@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheduled Pickups · EcoLoop</title>
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/css/loader.css">
+  <script>document.documentElement.classList.add('eco-boot');</script>
+  <script src="/vendor/leaflet/leaflet.js"></script>
+  <script src="/js/pickup-map.js"></script>
+</head>
+<body class="collector-page">
+  <nav class="nav home-nav" aria-label="Primary">
+    <div class="home-nav-inner">
+      <a class="logo home-logo" href="/"><span class="home-logo-mark" aria-hidden="true">♻</span>EcoLoop</a>
+      <div class="home-center-links" aria-label="Sections" hidden></div>
+      <div class="home-quick-links" id="home-quick-links" aria-label="Quick actions" hidden></div>
+      <div class="home-actions-nav">
+        <div class="home-profile hidden" id="home-profile">
+          <button class="home-profile-button" type="button" id="home-profile-button" aria-haspopup="menu" aria-expanded="false" aria-label="Account menu">
+            <span class="home-profile-avatar" id="home-profile-avatar" aria-hidden="true">•</span>
+            <span class="home-profile-name" id="home-profile-name"></span>
+            <span class="home-profile-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="home-profile-menu" id="home-profile-menu" role="menu" hidden>
+            <div class="home-profile-meta"><strong id="home-profile-fullname"></strong><span id="home-profile-role"></span></div>
+            <div id="home-profile-links"></div>
+            <button class="home-profile-item home-profile-logout" type="button" data-logout><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span><span>Logout</span></button>
+          </div>
+        </div>
+      </div>
+      <button class="home-menu-button" type="button" id="home-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="home-mobile-menu">
+        <span class="home-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <div class="home-mobile-menu" id="home-mobile-menu">
+      <div class="home-mobile-profile hidden" id="home-mobile-profile"></div>
+    </div>
+  </nav>
+  <section class="page">
+    <div class="collector-header"><div><p class="collector-eyebrow">Collection operations</p><h1 id="greeting">Scheduled pickups</h1><p class="collector-subtitle">Every pickup on today’s route, in one place.</p></div></div>
+    <div id="alert" class="hidden"></div>
+    <div class="collector-section-heading"><div><p class="collector-eyebrow">Today’s route</p><h2>Scheduled pickups</h2></div><span class="collector-live-status"><i></i> Live queue</span></div>
+    <div class="pickup-filters" id="pickup-filters" role="group" aria-label="Filter pickups by status">
+      <button type="button" class="pickup-filter active" data-pickup-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="pickup-filter" data-pickup-filter="scheduled" aria-pressed="false">Scheduled</button>
+      <button type="button" class="pickup-filter" data-pickup-filter="accepted" aria-pressed="false">Accepted</button>
+      <button type="button" class="pickup-filter" data-pickup-filter="in_progress" aria-pressed="false">In Progress</button>
+      <button type="button" class="pickup-filter" data-pickup-filter="collected" aria-pressed="false">Collected</button>
+      <button type="button" class="pickup-filter" data-pickup-filter="payment_pending" aria-pressed="false">Payment Pending</button>
+    </div>
+    <div id="pickup-list" class="pickup-list"></div>
+    <div id="weigh-form" class="card hidden" style="margin-top: 24px;">
+      <h2>Complete collection</h2>
+      <div id="weight-fields" class="form"></div>
+      <p id="calc-summary"></p>
+      <button class="btn" id="complete-pickup" type="button">Mark as Collected</button>
+    </div>
+  </section>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/loader.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/collector.js"></script>
+  <script>
+    if (typeof initNavbar === 'function') initNavbar();
+  </script>
+</body>
+</html>

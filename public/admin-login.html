@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login · EcoLoop</title>
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/loader.css">
+  <script>document.documentElement.classList.add('eco-boot');</script>
+</head>
+<body class="admin-page admin-login-page">
+  <main class="admin-login-shell">
+    <section class="admin-login-card">
+      <a class="ecoloop-brand" href="/"><span class="ecoloop-brand-mark" aria-hidden="true">♻</span><span>EcoLoop <small>Admin</small></span></a>
+      <div class="admin-login-heading">
+        <p class="admin-eyebrow">Team access</p>
+        <h1>Welcome back</h1>
+        <p>Sign in to manage your collection team.</p>
+      </div>
+      <div id="admin-login-alert" class="hidden"></div>
+      <form id="admin-login-form" class="admin-form">
+        <label>Email<input type="email" id="admin-email" autocomplete="email" required></label>
+        <label>Password<input type="password" id="admin-password" autocomplete="current-password" required></label>
+        <button class="admin-primary-button" type="submit">Sign in <span aria-hidden="true">→</span></button>
+      </form>
+      <a class="admin-back-link" href="/">← Back to EcoLoop</a>
+    </section>
+  </main>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/loader.js"></script>
+  <script src="/js/admin-login.js"></script>
+</body>
+</html>

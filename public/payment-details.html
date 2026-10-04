@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Details · EcoLoop</title>
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/loader.css">
+  <script>document.documentElement.classList.add('eco-boot');</script>
+</head>
+<body class="booking-page">
+  <nav class="nav home-nav" aria-label="Primary">
+    <div class="home-nav-inner">
+      <a class="logo home-logo" href="/"><span class="home-logo-mark" aria-hidden="true">♻</span>EcoLoop</a>
+      <div class="home-center-links" aria-label="Sections" hidden></div>
+      <div class="home-quick-links" id="home-quick-links" aria-label="Quick actions" hidden></div>
+      <div class="home-actions-nav">
+        <div class="home-profile hidden" id="home-profile">
+          <button class="home-profile-button" type="button" id="home-profile-button" aria-haspopup="menu" aria-expanded="false" aria-label="Account menu">
+            <span class="home-profile-avatar" id="home-profile-avatar" aria-hidden="true">•</span>
+            <span class="home-profile-name" id="home-profile-name"></span>
+            <span class="home-profile-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="home-profile-menu" id="home-profile-menu" role="menu" hidden>
+            <div class="home-profile-meta"><strong id="home-profile-fullname"></strong><span id="home-profile-role"></span></div>
+            <div id="home-profile-links"></div>
+            <button class="home-profile-item home-profile-logout" type="button" data-logout><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span><span>Logout</span></button>
+          </div>
+        </div>
+      </div>
+      <button class="home-menu-button" type="button" id="home-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="home-mobile-menu">
+        <span class="home-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <div class="home-mobile-menu" id="home-mobile-menu">
+      <div class="home-mobile-profile hidden" id="home-mobile-profile"></div>
+    </div>
+  </nav>
+  <div class="dashboard-shell">
+
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div>
+          <p class="eyebrow">Payouts</p>
+          <h1>Payment Details</h1>
+          <p class="dashboard-subtitle">Receive your EcoLoop earnings securely. <a href="/">Dashboard</a> / Payment Details</p>
+        </div>
+      </header>
+      <div id="alert" class="hidden"></div>
+      <div class="booking-app-grid">
+        <section class="card booking-card">
+          <div class="booking-card-header">
+            <div><p class="eyebrow">Payout method</p><h2>Choose where payouts go</h2></div>
+          </div>
+          <div class="categories booking-categories" role="group" aria-label="Payout method">
+            <label class="category-option"><input type="radio" name="payout-method" value="upi" checked><span class="category-check" aria-hidden="true">✓</span><span class="category-copy"><strong>UPI</strong><small>Instant payout</small></span></label>
+            <label class="category-option"><input type="radio" name="payout-method" value="bank"><span class="category-check" aria-hidden="true">✓</span><span class="category-copy"><strong>Bank Account</strong><small>NEFT / IMPS</small></span></label>
+          </div>
+          <form id="payout-form" class="form booking-form" novalidate>
+            <div id="upi-fields">
+              <label class="booking-field"><span>UPI ID *</span><input id="upi-id" placeholder="example@upi" autocomplete="off"><small class="field-error" id="upi-id-error"></small></label>
+              <p class="field-hint">✓ This UPI ID will be used to receive your EcoLoop payouts.</p>
+            </div>
+            <div id="bank-fields" hidden>
+              <label class="booking-field"><span>Account Holder Name *</span><input id="account-holder" placeholder="Full name as on bank account" autocomplete="name"><small class="field-error" id="account-holder-error"></small></label>
+              <div class="booking-field-row">
+                <label class="booking-field"><span>Bank Name *</span><input id="bank-name" placeholder="e.g. SBI"><small class="field-error" id="bank-name-error"></small></label>
+                <label class="booking-field"><span>IFSC Code *</span><input id="ifsc-code" placeholder="e.g. SBIN0001234" autocomplete="off"><small class="field-error" id="ifsc-code-error"></small></label>
+              </div>
+              <div class="booking-field-row">
+                <label class="booking-field"><span>Account Number *</span><input id="account-number" inputmode="numeric" placeholder="9-18 digits" autocomplete="off"><small class="field-error" id="account-number-error"></small></label>
+                <label class="booking-field"><span>Confirm Account Number *</span><input id="account-number-confirm" inputmode="numeric" placeholder="Re-enter account number" autocomplete="off"></label>
+              </div>
+              <p class="field-hint">✓ These bank details will be used to receive your EcoLoop payouts.</p>
+            </div>
+            <button class="btn booking-submit" type="submit"><span>Save Payment Details →</span></button>
+            <p class="booking-footnote"><span aria-hidden="true">⌁</span> Changing your details resets verification until an admin reviews them again.</p>
+          </form>
+        </section>
+        <aside class="card pickup-summary-card" aria-labelledby="payout-summary-title">
+          <section class="pickup-summary pickup-summary-plain">
+            <div class="pickup-summary-header">
+              <div><p class="eyebrow">Saved details</p><h3 id="payout-summary-title">Your payout method</h3></div>
+            </div>
+            <div id="payout-summary-empty" class="summary-empty">No payout details saved yet. Add your UPI or bank account to receive EcoLoop payouts.</div>
+            <div id="payout-summary-full" hidden>
+              <div class="summary-location" id="payout-summary-method"></div>
+              <div class="summary-location" id="payout-summary-lines"></div>
+              <div class="summary-location" id="payout-summary-added"></div>
+              <div class="summary-details">
+                <span>Status</span><strong id="payout-summary-verified">Unverified</strong>
+              </div>
+            </div>
+            <p class="summary-note" id="payout-summary-note" hidden>Saved details are shown above. Editing and saving replaces them.</p>
+            <button class="btn secondary" type="button" id="payout-edit" hidden>Edit saved details</button>
+            <button class="btn secondary" type="button" id="payout-delete" hidden>Remove saved details</button>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/loader.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/payment-details.js"></script>
+</body>
+</html>

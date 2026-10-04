@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Collectors · EcoLoop</title>
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/loader.css">
+  <script>document.documentElement.classList.add('eco-boot');</script>
+</head>
+<body class="admin-page">
+  <nav class="nav home-nav" aria-label="Primary">
+    <div class="home-nav-inner">
+      <a class="logo home-logo" href="/"><span class="home-logo-mark" aria-hidden="true">♻</span>EcoLoop</a>
+      <div class="home-center-links" aria-label="Sections" hidden></div>
+      <div class="home-quick-links" id="home-quick-links" aria-label="Quick actions" hidden></div>
+      <div class="home-actions-nav">
+        <div class="home-profile hidden" id="home-profile">
+          <button class="home-profile-button" type="button" id="home-profile-button" aria-haspopup="menu" aria-expanded="false" aria-label="Account menu">
+            <span class="home-profile-avatar" id="home-profile-avatar" aria-hidden="true">•</span>
+            <span class="home-profile-name" id="home-profile-name"></span>
+            <span class="home-profile-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="home-profile-menu" id="home-profile-menu" role="menu" hidden>
+            <div class="home-profile-meta"><strong id="home-profile-fullname"></strong><span id="home-profile-role"></span></div>
+            <div id="home-profile-links"></div>
+            <button class="home-profile-item home-profile-logout" type="button" data-logout><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span><span>Logout</span></button>
+          </div>
+        </div>
+      </div>
+      <button class="home-menu-button" type="button" id="home-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="home-mobile-menu">
+        <span class="home-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <div class="home-mobile-menu" id="home-mobile-menu">
+      <div class="home-mobile-profile hidden" id="home-mobile-profile"></div>
+    </div>
+  </nav>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <div><p class="admin-eyebrow">Collection team</p><h1>Manage collectors</h1><p>Create and manage the people responsible for EcoLoop pickups.</p></div>
+      <button class="admin-primary-button" id="open-collector-modal" type="button"><span aria-hidden="true">＋</span> Add Collector</button>
+    </header>
+    <div id="admin-alert" class="hidden"></div>
+
+    <section class="admin-surface" id="collectors">
+      <div class="admin-surface-header"><div><p class="admin-eyebrow">Collection team</p><h2>All collectors</h2></div><span class="admin-surface-note">Manage access and activity</span></div>
+      <div class="admin-collector-list" id="collectors-body"></div>
+    </section>
+    <section class="admin-surface admin-applications-surface" id="applications">
+      <div class="admin-surface-header"><div><p class="admin-eyebrow">Review queue</p><h2>Collector applications</h2></div><span class="admin-surface-note">Approve verified collection partners</span></div>
+      <div class="admin-application-list" id="applications-body"></div>
+    </section>
+  </main>
+
+  <div class="admin-modal-backdrop hidden" id="collector-modal" role="dialog" aria-modal="true" aria-labelledby="collector-modal-title">
+    <section class="admin-modal">
+      <div class="admin-modal-header"><div><p class="admin-eyebrow">New team member</p><h2 id="collector-modal-title">Add a collector</h2><p>Create an account for a new EcoLoop collection partner.</p></div><button class="admin-close-button" id="close-collector-modal" type="button" aria-label="Close">×</button></div>
+      <div id="collector-form-alert" class="hidden"></div>
+      <form id="collector-form" class="admin-form admin-modal-form">
+        <div class="admin-form-grid">
+          <label>Full name<input id="collector-name" required></label>
+          <label>Email<input type="email" id="collector-email" required></label>
+          <label>Phone<input id="collector-phone" required></label>
+          <label>Address<input id="collector-address"></label>
+          <label>Password<input type="password" id="collector-password" minlength="6" required></label>
+          <label>Confirm password<input type="password" id="collector-confirm-password" minlength="6" required></label>
+        </div>
+        <div class="admin-modal-actions"><button class="admin-secondary-button" id="cancel-collector" type="button">Cancel</button><button class="admin-primary-button" type="submit">Create Collector</button></div>
+      </form>
+    </section>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/loader.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/admin-collectors.js"></script>
+  <script>
+    if (typeof initNavbar === 'function') initNavbar();
+  </script>
+</body>
+</html>

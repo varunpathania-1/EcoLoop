@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard · EcoLoop</title>
+  <script>document.documentElement.classList.add('eco-boot');</script>
+</head>
+<body>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script>
+    // The resident dashboard now lives on the homepage. Keep this URL
+    // working for compatibility by sending residents to /.
+    (async function () {
+      const user = await requireAuth('resident');
+      if (user) window.location.replace('/');
+    })();
+  </script>
+</body>
+</html>

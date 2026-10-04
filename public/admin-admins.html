@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Admins · EcoLoop</title>
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/loader.css">
+  <script>document.documentElement.classList.add('eco-boot');</script>
+</head>
+<body class="admin-page">
+  <nav class="nav home-nav" aria-label="Primary">
+    <div class="home-nav-inner">
+      <a class="logo home-logo" href="/"><span class="home-logo-mark" aria-hidden="true">♻</span>EcoLoop</a>
+      <div class="home-center-links" aria-label="Sections" hidden></div>
+      <div class="home-quick-links" id="home-quick-links" aria-label="Quick actions" hidden></div>
+      <div class="home-actions-nav">
+        <div class="home-profile hidden" id="home-profile">
+          <button class="home-profile-button" type="button" id="home-profile-button" aria-haspopup="menu" aria-expanded="false" aria-label="Account menu">
+            <span class="home-profile-avatar" id="home-profile-avatar" aria-hidden="true">•</span>
+            <span class="home-profile-name" id="home-profile-name"></span>
+            <span class="home-profile-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="home-profile-menu" id="home-profile-menu" role="menu" hidden>
+            <div class="home-profile-meta"><strong id="home-profile-fullname"></strong><span id="home-profile-role"></span></div>
+            <div id="home-profile-links"></div>
+            <button class="home-profile-item home-profile-logout" type="button" data-logout><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span><span>Logout</span></button>
+          </div>
+        </div>
+      </div>
+      <button class="home-menu-button" type="button" id="home-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="home-mobile-menu">
+        <span class="home-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <div class="home-mobile-menu" id="home-mobile-menu">
+      <div class="home-mobile-profile hidden" id="home-mobile-profile"></div>
+    </div>
+  </nav>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <div><p class="admin-eyebrow">Access control</p><h1>Manage admins</h1><p>Create and review administrator access.</p></div>
+      <button class="admin-primary-button" id="open-admin-modal" type="button"><span aria-hidden="true">＋</span> Add Admin</button>
+    </header>
+    <div id="admin-alert" class="hidden"></div>
+
+    <section class="admin-surface admin-admins-surface" id="admins">
+      <div class="admin-surface-header"><div><p class="admin-eyebrow">Access control</p><h2>Admin Management</h2></div><span class="admin-surface-note">Trusted administrators</span></div>
+      <div class="admin-admin-list" id="admins-body"></div>
+    </section>
+  </main>
+
+  <div class="admin-modal-backdrop hidden" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title">
+    <section class="admin-modal">
+      <div class="admin-modal-header"><div><p class="admin-eyebrow">Access control</p><h2 id="admin-modal-title">Add an admin</h2><p>Create a trusted administrator account.</p></div><button class="admin-close-button" id="close-admin-modal" type="button" aria-label="Close">×</button></div>
+      <div id="admin-form-alert" class="hidden"></div>
+      <form id="admin-form" class="admin-form">
+        <div class="admin-form-grid">
+          <label>Full name<input id="new-admin-name" required></label>
+          <label>Email<input type="email" id="new-admin-email" required></label>
+          <label>Phone<input id="new-admin-phone" required></label>
+          <label>Password<input type="password" id="new-admin-password" minlength="6" required></label>
+          <label>Confirm password<input type="password" id="new-admin-confirm-password" minlength="6" required></label>
+        </div>
+        <div class="admin-modal-actions"><button class="admin-secondary-button" id="cancel-admin" type="button">Cancel</button><button class="admin-primary-button" type="submit">Create Admin</button></div>
+      </form>
+    </section>
+  </div>
+
+  <div class="admin-modal-backdrop hidden" id="admin-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="admin-confirm-title">
+    <section class="admin-modal admin-confirm-modal">
+      <div class="admin-modal-header"><div><p class="admin-eyebrow">Confirm access change</p><h2 id="admin-confirm-title">Deactivate this admin?</h2><p>This admin will no longer be able to sign in.</p></div><button class="admin-close-button" id="close-admin-confirm" type="button" aria-label="Close">×</button></div>
+      <div class="admin-modal-actions"><button class="admin-secondary-button" id="cancel-admin-confirm" type="button">Cancel</button><button class="admin-primary-button admin-danger-button" id="confirm-admin-deactivate" type="button">Deactivate</button></div>
+    </section>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/loader.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/admin-admins.js"></script>
+  <script>
+    if (typeof initNavbar === 'function') initNavbar();
+  </script>
+</body>
+</html>

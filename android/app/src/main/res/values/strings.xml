@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">EcoLoop</string>
+    <string name="title_activity_main">EcoLoop</string>
+    <string name="package_name">com.ecoloop.app</string>
+    <string name="custom_url_scheme">com.ecoloop.app</string>
+</resources>
