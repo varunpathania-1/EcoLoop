@@ -9,3 +9,6 @@ android/.idea/
 
 # Local backups
 backup-*/
+
+keystore.properties
+*.jks
