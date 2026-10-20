@@ -146,7 +146,9 @@ router.post('/register', async (req, res) => {
       maskedEmail: maskEmail(normalizedEmail),
       expiresAt: pending.otpExpiresAt
     });
+
   } catch (err) {
+    console.error('[AUTH REGISTER] Failed:', err.code, err.message);
     return res.status(500).json({ error: 'Registration failed' });
   }
 });

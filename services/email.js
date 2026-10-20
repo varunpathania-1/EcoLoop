@@ -12,7 +12,13 @@ function buildTransport() {
     host: process.env.EMAIL_HOST,
     port,
     secure: port === 465,
-    auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASSWORD }
+    auth: {
+  user: process.env.EMAIL_USER,
+  pass: process.env.EMAIL_PASSWORD
+},
+connectionTimeout: 10000,
+greetingTimeout: 10000,
+socketTimeout: 20000
   });
 }
 
@@ -48,8 +54,20 @@ async function sendEmailOtp(to, otp) {
     err.code = 'OTP_NOT_CONFIGURED';
     throw err;
   }
-  const transporter = buildTransport();
+const transporter = buildTransport();
+
+try {
   await transporter.sendMail(buildMessage(to, otp));
+  console.log('[EMAIL] OTP email accepted by SMTP provider');
+} catch (err) {
+  console.error('[EMAIL] OTP send failed:', {
+    code: err.code,
+    command: err.command,
+    responseCode: err.responseCode,
+    message: err.message
+  });
+  throw err;
+}
   if (isDevMode()) console.log(`[DEV OTP] Email OTP sent to ${to} (see inbox)`);
   return { delivered: true, devMode: false };
 }

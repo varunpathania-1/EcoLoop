@@ -1,4 +1,9 @@
-const API_BASE = 'https://ecoloop-wayl.onrender.com';
+const API_BASE = (
+  location.hostname === 'localhost' ||
+  location.hostname === '127.0.0.1'
+)
+  ? ''
+  : 'https://ecoloop-wayl.onrender.com';
 
 const API = {
   async request(path, options = {}) {
