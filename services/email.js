@@ -1,7 +1,12 @@
 const { isDevMode, OTP_EXPIRY_MINUTES } = require('./otp');
 
 function isEmailConfigured() {
-  return Boolean(process.env.EMAIL_HOST && process.env.EMAIL_USER && process.env.EMAIL_PASSWORD);
+  return Boolean(
+    process.env.RESEND_API_KEY ||
+    (process.env.EMAIL_HOST &&
+     process.env.EMAIL_USER &&
+     process.env.EMAIL_PASSWORD)
+  );
 }
 
 function buildTransport() {
@@ -44,16 +49,58 @@ function buildMessage(to, otp) {
   };
 }
 
+
 async function sendEmailOtp(to, otp) {
+  const message = buildMessage(to, otp);
+
+  // Use Resend on Render (HTTPS API)
+  if (process.env.RESEND_API_KEY) {
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        from: 'EcoLoop <onboarding@resend.dev>',
+        to: [to],
+        subject: message.subject,
+        text: message.text
+      })
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error('[RESEND] Email failed:', result);
+      const err = new Error(
+        result.message || 'Resend could not send the verification email.'
+      );
+      err.code = 'RESEND_API_ERROR';
+      throw err;
+    }
+
+    console.log('[RESEND] OTP email accepted:', result.id);
+    return { delivered: true, provider: 'resend' };
+  }
+
+  // Keep SMTP as a fallback for local development
   if (!isEmailConfigured()) {
     if (isDevMode()) {
       console.log(`[DEV OTP] Email OTP for ${to}: ${otp}`);
       return { delivered: false, devMode: true };
     }
-    const err = new Error('OTP service is not configured. Add email/SMS credentials to .env.');
+
+    const err = new Error('OTP service is not configured.');
     err.code = 'OTP_NOT_CONFIGURED';
     throw err;
   }
+
+  const transporter = buildTransport();
+  await transporter.sendMail(message);
+  return { delivered: true, provider: 'smtp' };
+}
+
 const transporter = buildTransport();
 
 try {
